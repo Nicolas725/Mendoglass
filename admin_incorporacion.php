@@ -394,11 +394,12 @@ if (isset($_POST["cliente"])) {
   <br>
   <div class="container">
     <div class="row align-items-end">
-      <div class="col-5">
+      <div class="col-4">
       </div>
-      <div class="col-5">
+      <div class="col-4">
       </div>
       <div class="col-md-auto">
+        <a href="admin_menu.php" class="btn btn-info btn-md">Volver</a>
         <a href="salir.php" class="btn btn-info btn-md">Cerrar Sesion</a>
       </div>
     </div>
