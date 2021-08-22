@@ -69,6 +69,7 @@ include("./conexion_db.php");
           <table class="table">
             <thead class="thead-dark">
             <tr>
+              <th>N° Cta Cte</th>
               <th>CUIT/DNI</th>
               <th>Sit. Fiscal</th>
               <th>Cliente</th>
@@ -78,8 +79,8 @@ include("./conexion_db.php");
               <th>Tel</th>
               <th>Actividad</th>
               <th>Descuentos</th>
-              <th>N° Cta Cte</th>
               <th>Modificar</th>
+              <th>Eliminar</th>
             </tr>
           </thead>
 
@@ -94,6 +95,7 @@ include("./conexion_db.php");
           echo $new_date;
         }*/
         $sql="(SELECT
+        NRO_CTA_CTE,
         CUIT_DNI,
         SITUACION_FISCAL,
         CLIENTE,
@@ -102,8 +104,8 @@ include("./conexion_db.php");
         CORREO,
         TELEFONOS,
         ACTIVIDAD,
-        DESCUENTOS,
-        NRO_CTA_CTE
+        DESCUENTOS
+
 
         FROM
 
@@ -127,6 +129,7 @@ include("./conexion_db.php");
             <th><?php echo $ver[8] ?></th>
             <th><?php echo $ver[9] ?></th>
             <th><a href="modificar_clientes.php" class="btn btn-primary">Seleccionar</a></th>
+            <th><a href="eliminar_clientes.php" class="btn btn-primary">Eliminar</a></th>
           </tr>
         </tbody>
 
