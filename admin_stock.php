@@ -32,12 +32,11 @@ session_start();
       <div class="col-4">
       </div>
       <div class="col-md-auto">
-        <a href="admin_menu.php" class="btn btn-info btn-md">Volver</a>
-        <a href="salir.php" class="btn btn-info btn-md">Cerrar Sesion</a>
+
       </div>
     </div>
   </div>
-  <br><br><br>
+  <br><br>
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="col">
@@ -48,6 +47,31 @@ session_start();
           ?>
       </div>
       <div class="col">
+      </div>
+    </div>
+    <br><br>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-12">
+          <table class="table table-hover table-condensed">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <a href="admin_clientes_filtros.php" class="btn btn-info btn-md">Filtrar</a>
+  					</td>
+            <td>
+              <a href="admin_menu.php" class="btn btn-info btn-md">Volver</a>
+  					</td>
+            <td>
+              <a href="salir.php" class="btn btn-info btn-md">Cerrar Sesion</a>
+  					</td>
+          </table>
+        </div>
+        <div class="col-4">
+        </div>
+        <div class="col-md-auto">
+        </div>
       </div>
     </div>
     <br><br><br><br><br>

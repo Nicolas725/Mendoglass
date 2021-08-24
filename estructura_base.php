@@ -58,16 +58,12 @@ include("./conexion_db.php");
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-
             <td>
               <a href="admin_clientes.php" class="btn btn-info btn-md">Volver</a>
   					</td>
             <td>
               <a href="salir.php" class="btn btn-info btn-md">Cerrar Sesion</a>
   					</td>
-            <td></td>
-
           </table>
         </div>
 
