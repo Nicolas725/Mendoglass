@@ -58,22 +58,48 @@ include("./conexion_db.php");
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-
             <td>
               <a href="admin_clientes.php" class="btn btn-info btn-md">Volver</a>
   					</td>
             <td>
               <a href="salir.php" class="btn btn-info btn-md">Cerrar Sesion</a>
   					</td>
-            <td></td>
-
           </table>
         </div>
-
-
-
-
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col-5">
+              <form method="post" action="admin_clientes_filtros2.php">
+                <br>
+                Seleccione la opcion por la cual desea filtrar:
+                <br>
+                <table class="table">
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="cuenta" value="cuenta">N° Cta Cte
+                    </td>
+                    <td>
+                      <input type="checkbox" name="fiscal" value="fiscal">Sit. Fiscal
+                    </td>
+                    <td>
+                      <input type="checkbox" name="activ" value="activ">Actividad
+                    </td>
+                  </tr>
+                  <br><br>
+                  <tr>
+                    <td></td>
+                    <td><input type="submit" value="Filtrar" class="btn btn-primary"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <br><br>

@@ -33,8 +33,7 @@ include("./conexion_db.php");
       <div class="col-4">
       </div>
       <div class="col-md-auto">
-        <a href="admin_menu.php" class="btn btn-info btn-md">Volver</a>
-        <a href="salir.php" class="btn btn-info btn-md">Cerrar Sesion</a>
+
       </div>
     </div>
   </div>
@@ -53,10 +52,23 @@ include("./conexion_db.php");
     </div>
     <br><br>
     <div class="container">
-      <div class="row align-items-end">
-        <div class="col-4">
-          <a href="admin_clientes_filtros.php" class="btn btn-info btn-md">Filtrar</a>
-          <a href="admin_crear_cliente.php" class="btn btn-info btn-md">Nuevo Regitro</a>
+      <div class="row justify-content-md-center">
+        <div class="col-12">
+          <table class="table table-hover table-condensed">
+            <td></td>
+            <td>
+              <a href="admin_clientes_filtros.php" class="btn btn-info btn-md">Filtrar</a>
+  					</td>
+            <td>
+              <a href="admin_crear_cliente.php" class="btn btn-info btn-md">Nuevo Regitro</a>
+  					</td>
+            <td>
+              <a href="admin_menu.php" class="btn btn-info btn-md">Volver</a>
+  					</td>
+            <td>
+              <a href="salir.php" class="btn btn-info btn-md">Cerrar Sesion</a>
+  					</td>
+          </table>
         </div>
         <div class="col-4">
         </div>
@@ -138,7 +150,6 @@ include("./conexion_db.php");
         ?>
       </table>
     </div>
-  </div>
   </div>
   <?php
   }
