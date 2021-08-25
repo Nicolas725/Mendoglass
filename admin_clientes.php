@@ -9,13 +9,16 @@ include("./conexion_db.php");
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  <!-- Optional JavaScript; choose one of the two! -->
-  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="bootstrap-4.6.0/css/bootstrap.min.css" >
+  <link rel="stylesheet" type="text/css" href="bootstrap-4.6.0/font-awesome.min.css">
+  <script src="bootstrap-4.6.0/jquery/jquery-3.5.1.min.js"></script>
+  <script src="bootstrap-4.6.0/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="librerias/alertifyjs/css/alertify.css">
+	<link rel="stylesheet" type="text/css" href="librerias/alertifyjs/css/themes/default.css">
+	<script src="js/funcionesI.js"></script>
+	<script src="bootstrap-4.6.0/js/bootstrap.js"></script>
+	<script src="librerias/alertifyjs/alertify.js"></script>
+
 
 
   <title>Mendoglass</title>
@@ -51,106 +54,118 @@ include("./conexion_db.php");
       </div>
     </div>
     <br><br>
+    <br><br>
+    </div>
+
     <div class="container">
-      <div class="row justify-content-md-center">
-        <div class="col-12">
-          <table class="table table-hover table-condensed">
-            <td></td>
-            <td>
-              <a href="admin_clientes_filtros.php" class="btn btn-info btn-md">Filtrar</a>
-  					</td>
-            <td>
-              <a href="admin_crear_cliente.php" class="btn btn-info btn-md">Nuevo Regitro</a>
-  					</td>
-            <td>
-              <a href="admin_menu.php" class="btn btn-info btn-md">Volver</a>
-  					</td>
-            <td>
-              <a href="salir.php" class="btn btn-info btn-md">Cerrar Sesion</a>
-  					</td>
-          </table>
-        </div>
-        <div class="col-4">
-        </div>
-        <div class="col-md-auto">
+      <div id="clientes_tabla"></div>
+    </div>
+
+    <div class="modal fade" id="modalNuevoI" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Agrega nuevo cliente</h4>
+          </div>
+          <div class="modal-body">
+            <label>N° Cta Cte</label>
+            <input type="number" name="" id="ctacte" class="form-control input-sm" placeholder="Ingrese el numero de cta cte" required oninvalid="this.setCustomValidity('Ingrese el numero de cta cte aqui')" oninput="this.setCustomValidity('')">
+            <label>CUIT/DNI</label>
+            <input type="text" name="" id="cuitdni" class="form-control input-sm" placeholder="Ingrese el CUIT o DNI" required oninvalid="this.setCustomValidity('Ingrese el CUIT o DNI aqui')"  oninput="this.setCustomValidity('')">
+            <label>Situacion Fiscal</label>
+            <input type="text" name="" id="sitf" class="form-control input-sm" placeholder="Ingrese la situacion fiscal" required oninvalid="this.setCustomValidity('Ingrese la situacion fiscal aqui')"  oninput="this.setCustomValidity('')">
+            <label>Cliente</label>
+            <input type="text" name="" id="nomcliente" class="form-control input-sm" placeholder="Ingrese el nombre del cliente" required oninvalid="this.setCustomValidity('Ingrese el nombre del cliente aqui')"  oninput="this.setCustomValidity('')">
+            <label>Ingresos Brutos</label>
+            <input type="number" name="" id="ingb" class="form-control input-sm" placeholder="Ingrese codigo de ingresos brutos" required oninvalid="this.setCustomValidity('Ingrese el codigo de ingresos brutos aqui')"  oninput="this.setCustomValidity('')">
+            <label>Direccion</label>
+            <input type="text" name="" id="dir" class="form-control input-sm" placeholder="Ingrese la direccion del cliente" required oninvalid="this.setCustomValidity('Ingrese la direccion del cliente aqui')"  oninput="this.setCustomValidity('')">
+            <label>Correo</label>
+            <input type="text" name="" id="mail" class="form-control input-sm" placeholder="Ingrese el correo" required oninvalid="this.setCustomValidity('Ingrese el correo aqui')"  oninput="this.setCustomValidity('')">
+            <label>Telefono</label>
+            <input type="text" name="" id="tel" class="form-control input-sm" placeholder="Ingrese el telefono" required oninvalid="this.setCustomValidity('Ingrese el telefono aqui')"  oninput="this.setCustomValidity('')">
+            <label>Actividad</label>
+            <input type="text" name="" id="job" class="form-control input-sm" placeholder="Ingrese la actividad del cliente" required oninvalid="this.setCustomValidity('Ingrese la actividad del cliente aqui')"  oninput="this.setCustomValidity('')">
+            <label>Descuentos</label>
+            <input type="number" name="" id="desc" class="form-control input-sm" placeholder="Ingrese el descuento" required oninvalid="this.setCustomValidity('Ingrese el descuento aqui')"  oninput="this.setCustomValidity('')">
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="guardarnuevoI">Agregar</button>
+          </div>
         </div>
       </div>
     </div>
-    <br><br>
-      <div class="row justify-content-md-center">
-          <table class="table">
-            <thead class="thead-dark">
-            <tr>
-              <th>N° Cta Cte</th>
-              <th>CUIT/DNI</th>
-              <th>Sit. Fiscal</th>
-              <th>Cliente</th>
-              <th>Ing Brutos</th>
-              <th>Direccion</th>
-              <th>Correo</th>
-              <th>Tel</th>
-              <th>Actividad</th>
-              <th>Descuentos</th>
-              <th>Modificar</th>
-              <th>Eliminar</th>
-            </tr>
-          </thead>
 
-            <?php
-            /*if(!isset($_POST['frmSearch'])){
-            $opcion = $_POST['frmSearch'];
-            echo $opcion;
-            echo "estoy aca";
-          }*/
-          /*if(!isset($_POST['dateFrom'])){
-          $new_date = date('Y-m-d', strtotime($_POST['dateFrom']));
-          echo $new_date;
-        }*/
-        $sql="(SELECT
-        NRO_CTA_CTE,
-        CUIT_DNI,
-        SITUACION_FISCAL,
-        CLIENTE,
-        TASA_ING_BRUTOS,
-        DIRECCION,
-        CORREO,
-        TELEFONOS,
-        ACTIVIDAD,
-        DESCUENTOS
+    <div class="modal fade" id="modalEdicionI" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Actualizar datos</h4>
+          </div>
+          <div class="modal-body">
 
+            <input type="number" hidden="" id="id_cliu">
 
-        FROM
-
-        clientes
-        )
-        ";
-        $result=mysqli_query($conexion,$sql);
-        while($ver=mysqli_fetch_row($result)){
-          ?>
-          <tbody>
-
-          <tr>
-            <th><?php echo $ver[0] ?></th>
-            <th><?php echo $ver[1] ?></th>
-            <th><?php echo $ver[2] ?></th>
-            <th><?php echo $ver[3] ?></th>
-            <th><?php echo $ver[4] ?></th>
-            <th><?php echo $ver[5] ?></th>
-            <th><?php echo $ver[6] ?></th>
-            <th><?php echo $ver[7] ?></th>
-            <th><?php echo $ver[8] ?></th>
-            <th><?php echo $ver[9] ?></th>
-            <th><a href="modificar_clientes.php" class="btn btn-primary">Seleccionar</a></th>
-            <th><a href="eliminar_clientes.php" class="btn btn-primary">Eliminar</a></th>
-          </tr>
-        </tbody>
-
-          <?php
-        }
-        ?>
-      </table>
+            <label>N° Cta Cte</label>
+            <input type="number" name="" id="ctacteu" class="form-control input-sm" placeholder="Ingrese el numero de cta cte" required oninvalid="this.setCustomValidity('Ingrese el numero de cta cte aqui')" oninput="this.setCustomValidity('')">
+            <label>CUIT/DNI</label>
+            <input type="text" name="" id="cuitdniu" class="form-control input-sm" placeholder="Ingrese el CUIT o DNI" required oninvalid="this.setCustomValidity('Ingrese el CUIT o DNI aqui')"  oninput="this.setCustomValidity('')">
+            <label>Situacion Fiscal</label>
+            <input type="text" name="" id="sitfu" class="form-control input-sm" placeholder="Ingrese la situacion fiscal" required oninvalid="this.setCustomValidity('Ingrese la situacion fiscal aqui')"  oninput="this.setCustomValidity('')">
+            <label>Cliente</label>
+            <input type="text" name="" id="nomclienteu" class="form-control input-sm" placeholder="Ingrese el nombre del cliente" required oninvalid="this.setCustomValidity('Ingrese el nombre del cliente aqui')"  oninput="this.setCustomValidity('')">
+            <label>Ingresos Brutos</label>
+            <input type="number" name="" id="ingbu" class="form-control input-sm" placeholder="Ingrese codigo de ingresos brutos" required oninvalid="this.setCustomValidity('Ingrese el codigo de ingresos brutos aqui')"  oninput="this.setCustomValidity('')">
+            <label>Direccion</label>
+            <input type="text" name="" id="diru" class="form-control input-sm" placeholder="Ingrese la direccion del cliente" required oninvalid="this.setCustomValidity('Ingrese la direccion del cliente aqui')"  oninput="this.setCustomValidity('')">
+            <label>Correo</label>
+            <input type="text" name="" id="mailu" class="form-control input-sm" placeholder="Ingrese el correo" required oninvalid="this.setCustomValidity('Ingrese el correo aqui')"  oninput="this.setCustomValidity('')">
+            <label>Telefono</label>
+            <input type="text" name="" id="telu" class="form-control input-sm" placeholder="Ingrese el telefono" required oninvalid="this.setCustomValidity('Ingrese el telefono aqui')"  oninput="this.setCustomValidity('')">
+            <label>Actividad</label>
+            <input type="text" name="" id="jobu" class="form-control input-sm" placeholder="Ingrese la actividad del cliente" required oninvalid="this.setCustomValidity('Ingrese la actividad del cliente aqui')"  oninput="this.setCustomValidity('')">
+            <label>Descuentos</label>
+            <input type="number" name="" id="descu" class="form-control input-sm" placeholder="Ingrese el descuento" required oninvalid="this.setCustomValidity('Ingrese el descuento aqui')"  oninput="this.setCustomValidity('')">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" id="actualizadatosI" data-dismiss="modal">Actualizar</button>
+        </div>
+      </div>
     </div>
-  </div>
+    </div>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('#clientes_tabla').load('clientes_tabla.php');
+    });
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $('#guardarnuevoI').click(function(){
+      ctacte=$('#ctacte').val();
+      cuitdni=$('#cuitdni').val();
+      sitf=$('#sitf').val();
+      nomcliente=$('#nomcliente').val();
+      ingb=$('#ingb').val();
+      dir=$('#dir').val();
+      mail=$('#mail').val();
+      tel=$('#tel').val();
+      job=$('#job').val();
+      desc=$('#desc').val();
+      agregardatosI(ctacte,cuitdni,sitf,nomcliente,ingb,dir,mail,tel,job,desc);
+    });
+
+    $('#actualizadatosI').click(function(){
+      actualizaDatosI();
+    });
+    });
+    </script>
+
   <?php
   }
     else{
