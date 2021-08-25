@@ -36,7 +36,6 @@ include("./conexion_db.php");
       <div class="col-4">
       </div>
       <div class="col-md-auto">
-
       </div>
     </div>
   </div>
@@ -53,12 +52,9 @@ include("./conexion_db.php");
       <div class="col">
       </div>
     </div>
-    <br><br>
-    <br><br>
     </div>
 
     <div class="container">
-<<<<<<< HEAD
       <div id="clientes_tabla"></div>
     </div>
 
@@ -96,25 +92,6 @@ include("./conexion_db.php");
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal" id="guardarnuevoI">Agregar</button>
           </div>
-=======
-      <div class="row justify-content-md-center">
-        <div class="col-12">
-          <table class="table table-hover table-condensed">
-            <td></td>
-            <td>
-              <a href="admin_clientes_filtros.php" class="btn btn-info btn-md">Filtrar</a>
-  					</td>
-            <td>
-              <a href="admin_crear_cliente.php" class="btn btn-info btn-md">Nuevo Regitro</a>
-  					</td>
-            <td>
-              <a href="admin_menu.php" class="btn btn-info btn-md">Volver</a>
-  					</td>
-            <td>
-              <a href="salir.php" class="btn btn-info btn-md">Cerrar Sesion</a>
-  					</td>
-          </table>
->>>>>>> Martin
         </div>
       </div>
     </div>
@@ -157,7 +134,6 @@ include("./conexion_db.php");
       </div>
     </div>
     </div>
-<<<<<<< HEAD
 
     <script type="text/javascript">
     $(document).ready(function(){
@@ -187,9 +163,6 @@ include("./conexion_db.php");
     });
     </script>
 
-=======
-  </div>
->>>>>>> Martin
   <?php
   }
     else{

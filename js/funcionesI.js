@@ -31,13 +31,13 @@ function agregardatosI(ctacte,cuitdni,sitf,nomcliente,ingb,dir,mail,tel,job,desc
 		url:"clientes_agr.php",
 		data:cadena,
 		success:function(r){
-			alertify.message(r, 0);
+			//alertify.message(r, 0);
 
 			if(r==1){
 				$('#clientes_tabla').load('clientes_tabla.php');
 				alertify.success("Agregado con exito");
 			}else{
-				alertify.message(r, 0);
+				//alertify.message(r, 0);
 				alertify.error("Los campos no están completos o el cliente ya existe");
 			}
 		}
