@@ -3,7 +3,7 @@ session_start();
 include("./conexion_db.php");
 
 $category = isset($_POST['category']) ? $_POST['category'] : false;
-
+$porcentaje = isset($_POST['porcentaje']) ? $_POST['porcentaje'] : false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,20 +57,12 @@ $category = isset($_POST['category']) ? $_POST['category'] : false;
       </div>
     </div>
     <br><br><br><br><br>
-
-    <form action="listado_categorias1.php" method="post">
-          <div class="">
-            <td>
-                Seleccione porcentaje de aumento:
-                <input type="number" name="porcentaje" id="porcentaje" value="1" min="1" max="999999">
-                <input type="hidden" name="category" id="category" value="<?php echo $category ?>">
-                <?php
-                ?>
-            </td>
-          <td> <button type="submit" name="porc" id="porc">Aumentar</button> </td>
-        </div>
-    </form>
     <?php
+    echo $porcentaje;
+    echo $category;
+      $sqlSelect1 = "CALL update_costo_cat($porcentaje,'$category')";
+      $result1=mysqli_query($conexion,$sqlSelect1);
+
       $sqlSelect = "SELECT rubro, articulo, categoria, descripcion, precio FROM stock where categoria ='$category'";
       $result=mysqli_query($conexion,$sqlSelect);
       //if (! empty($result)) {
