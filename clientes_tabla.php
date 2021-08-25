@@ -25,16 +25,28 @@ include("./conexion_db.php");
   <?php
     if($_SESSION['ucontrol']){
   ?>
+  <br><br>
   <div class="container">
-    <div class="row align-items-end">
-      <div class="col-4">
-        <a href="admin_clientes_filtros.php" class="btn btn-info btn-md">Filtrar</a>
-        <caption>
-          <button class="btn btn-info btn-md" data-toggle="modal" data-target="#modalNuevoI">
-            Agregar Cliente
-            <span class="glyphicon glyphicon-plus"></span>
-          </button>
-        </caption>
+    <div class="row justify-content-md-center">
+      <div class="col-12">
+        <table class="table table-hover table-condensed">
+          <td></td>
+          <td>
+            <a href="admin_clientes_filtros.php" class="btn btn-info btn-md">Filtrar</a>
+          </td>
+          <td>
+            <button class="btn btn-info btn-md" data-toggle="modal" data-target="#modalNuevoI">
+              Agregar Cliente
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+          </td>
+          <td>
+            <a href="admin_menu.php" class="btn btn-info btn-md">Volver</a>
+          </td>
+          <td>
+            <a href="salir.php" class="btn btn-info btn-md">Cerrar Sesion</a>
+          </td>
+        </table>
       </div>
       <div class="col-4">
       </div>
@@ -42,10 +54,8 @@ include("./conexion_db.php");
       </div>
     </div>
   </div>
+  <br><br>
 
-    <br>
-
-    <br><br>
   <div class="container">
 
     <div class="row justify-content-md-center">
@@ -68,15 +78,6 @@ include("./conexion_db.php");
           </thead>
 
             <?php
-            /*if(!isset($_POST['frmSearch'])){
-            $opcion = $_POST['frmSearch'];
-            echo $opcion;
-            echo "estoy aca";
-          }*/
-          /*if(!isset($_POST['dateFrom'])){
-          $new_date = date('Y-m-d', strtotime($_POST['dateFrom']));
-          echo $new_date;
-        }*/
         $sql="SELECT ID_CLIENTE, NRO_CTA_CTE, CUIT_DNI, SITUACION_FISCAL, CLIENTE, TASA_ING_BRUTOS, DIRECCION,
         CORREO, TELEFONOS, ACTIVIDAD, DESCUENTOS FROM clientes";
         $result=mysqli_query($conexion,$sql);

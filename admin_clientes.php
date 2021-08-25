@@ -36,7 +36,6 @@ include("./conexion_db.php");
       <div class="col-4">
       </div>
       <div class="col-md-auto">
-
       </div>
     </div>
   </div>
@@ -53,8 +52,6 @@ include("./conexion_db.php");
       <div class="col">
       </div>
     </div>
-    <br><br>
-    <br><br>
     </div>
 
     <div class="container">
